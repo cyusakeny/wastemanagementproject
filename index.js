@@ -40,6 +40,7 @@ app.use(cors())
 app.use('/users',require('./routes/userRoute'))
 app.use('/roads',require('./routes/collectorRoadsRoute'))
 app.use('/waste',require('./routes/recycle'))
+app.use('/stats',require('./routes/dashboards'))
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

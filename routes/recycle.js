@@ -50,7 +50,7 @@ router.get('/getCollectorUnCollected',util.authenticateToken,async(req,res)=>{
 
 router.get('/collectWaste',util.authenticateToken,async(req,res)=>{
     try{
-      const data = recycleService.MarkWasteAsCollected(req.params.id)
+      const data = await recycleService.MarkWasteAsCollected(req.query.id)
       res.json({status:200,data:data})
     }
     catch(error){
@@ -60,7 +60,7 @@ router.get('/collectWaste',util.authenticateToken,async(req,res)=>{
 
 router.get('/recycle',util.authenticateToken,async(req,res)=>{
     try{
-      const data = recycleService.MarkWasteAsRecycled(req.params.id)
+      const data = await recycleService.MarkWasteAsRecycled(req.query.id)
       res.json({status:200,data:data})
     }
     catch(error){
